@@ -5,14 +5,13 @@ const urls =  [
                                         
 let combinedData = "";                  
 // Helper to delay requests
-const wait = (ms) => new Promise(resolve
- => setTimeout(resolve, ms));
+//const wait = (ms) => new Promise(resolve
+// => setTimeout(resolve, ms));
 
 async function fetchWithDelay() {         for (const url of urls) {
     try {
       const response = await fetch(url);
-      const data = await response.text()
-; // or .json() [2]
+      const data = await response.text(); // or .json() [2]
       getStatus(data, url);
       await wait(1000); // 1-second timer between sites [1]
     } catch (error) {
@@ -29,8 +28,7 @@ function fetchPeriodically() {
 }
 
 function getStatus(data, url) {
-  let city = data.toLowerCase().includes
-("open");
+  let city = data.toLowerCase().includes("open");
 
   if (city) {
    alert(url + " list is closed");
