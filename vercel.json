@@ -1,9 +1,0 @@
-// Source - https://stackoverflow.com/a
-// Posted by ha36d
-// Retrieved 2026-01-28, License - CC BY-SA 4.0
-
-{
-"rewrites": [
-    {"source": "/(.*)", "destination": "/"}
-]
-}
