@@ -5,10 +5,10 @@ const urls =  [
                                         
 let combinedData = "";                  
 // Helper to delay requests
-//const wait = (ms) => new Promise(resolve
-// => setTimeout(resolve, ms));
+const wait = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 
-async function fetchWithDelay() {         for (const url of urls) {
+async function fetchWithDelay() {         
+    for (const url of urls) {
     try {
       const response = await fetch(url);
       const data = await response.text(); // or .json() [2]
