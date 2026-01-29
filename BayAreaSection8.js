@@ -5,7 +5,7 @@ const urls =  [
                                         
 let combinedData = "";                  
 // Helper to delay requests
-const wait = (ms) => new Promise(resolve => setTimeout(resolve, ms));
+//const wait = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 
 async function fetchWithDelay() {         
     for (const url of urls) {
@@ -48,7 +48,7 @@ function pollSite() {
 
 function main() {
  // pollSite();
-console.log("test");
+console.log("test\n");
 }
 
 main();
