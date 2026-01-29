@@ -48,7 +48,7 @@ function pollSite() {
 
 function main() {
  // pollSite();
-alert("test");
+console.log("test");
 }
 
 main();
