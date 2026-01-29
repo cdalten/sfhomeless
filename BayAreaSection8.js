@@ -31,20 +31,15 @@ function getStatus(data, url) {
   let city = data.toLowerCase().includes("open");
 
   if (city) {
-   alert(url + " list is closed");
+   console.log(url + " list is closed");
   } else {
-   alert(url + "  list is open");
+   console.log(url + "  list is open");
   }
 }
 
 function pollSite() {
-  
-
   fetchPeriodically();
-
-
 }
-
 
 function main() {
  // pollSite();
