@@ -44,6 +44,7 @@ function pollSite() {
 function main() {
  // pollSite();
 console.log("test\n");
+document.write("<h1>This text was written by document.write()</h1>");
 }
 
 main();
