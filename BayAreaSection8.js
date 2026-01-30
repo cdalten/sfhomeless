@@ -10,7 +10,7 @@ export const runtime = 'edge';
 
 export default async function (request) {
   // The absolute remote external URL to fetch
-  const externalUrl = 'https://api.ipify.org';
+  const externalUrl = urls[1];
 
   try {
     // Perform the fetch request server-side
