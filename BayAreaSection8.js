@@ -37,7 +37,7 @@ function getStatus(data, url) {
    console.log(url + "  list is open");
   }
     */
-    document.write(data);
+    document.getElementById('content-container').innerHTML = data;
 }
 
 function pollSite() {
