@@ -21,6 +21,7 @@ async function fetchWithDelay() {
     try {
         const baseUrl = getBaseUrl();
    const absoluteUrl = `${baseUrl}/index`; //
+        document.write(absoluteUrl);
       const response = await fetch(absoluteUrl);
       const data = await response.text(); // or .json() [2]
       getStatus(data, url);
@@ -48,7 +49,7 @@ function getStatus(data, url) {
    console.log(url + "  list is open");
   }
     */
-    document.getElementById('content-container').innerHTML = data;
+    //document.getElementById('content-container').innerHTML = data;
 }
 
 function pollSite() {
