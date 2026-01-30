@@ -1,13 +1,13 @@
 ⁸const urls =  [
     'https://sfha.org/housing-programs/waitlist',
     'https://www.oakha.org/housing/qualifyandapply/waitlists/',
-    'https://bha.berkeleyca.gov/bha-programs/section-8-waitlist'                   ]
+    'https://bha.berkeleyca.gov/bha-programs/section-8-waitlist'];
                                         
 let combinedData = "";                  
 // Helper to delay requests
 //const wait = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 export default async function handler(req, res) {
-    const externalUrl = urls[1];
+    const externalUrl = 'https://sfha.org/housing-programs/waitlist';
   try {
     // Perform the server-side fetch request
     const response = await fetch(externalUrl);
