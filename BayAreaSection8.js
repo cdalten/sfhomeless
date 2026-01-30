@@ -6,11 +6,22 @@ const urls =  [
 let combinedData = "";                  
 // Helper to delay requests
 //const wait = (ms) => new Promise(resolve => setTimeout(resolve, ms));
+function getBaseUrl() {
+  // In development, process.env.NODE_ENV is 'development'
+  if (process.env.NODE_ENV === 'development') {
+    return process.env.VERCEL_URL || 'http://localhost:3000';
+  }
+  // In production on Vercel, use the VERCEL_URL environment variable
+  // Add the protocol manually as it's often missing
+  return `https://${process.env.VERCEL_URL}`;
+}
 
 async function fetchWithDelay() {         
     for (const url of urls) {
     try {
-      const response = await fetch(url);
+        const baseUrl = getBaseUrl();
+   const absoluteUrl = `${baseUrl}/index`; //
+      const response = await fetch(absoluteUrl);
       const data = await response.text(); // or .json() [2]
       getStatus(data, url);
       await wait(1000); // 1-second timer between sites [1]
