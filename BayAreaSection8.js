@@ -7,37 +7,38 @@ let combinedData = "";
 export const runtime = 'edge';
 // Helper to delay requests
 //const wait = (ms) => new Promise(resolve => setTimeout(resolve, ms));
-export default async function handler(req, res) {
-    const externalUrl = 'https://sfha.org/housing-programs/waitlist';
-  try {
-    // Perform the server-side fetch request
-    const response = await fetch(externalUrl);
 
-    // Check if the request was successful
+export default async function (request) {
+  // The absolute remote external URL to fetch
+  const externalUrl = 'https://api.ipify.org';
+
+  try {
+    // Perform the fetch request server-side
+    const response = await fetch(externalUrl, {
+      cache: 'no-store', // Prevents caching of the response if dynamic data is needed
+    });
+
+    // Check if the request was successful (status code 200-299)
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
 
-    // Use the .text() method to parse the response body as plain text
+    // Get the response body as plain text
     const textData = await response.text();
 
-    // Return the text data in a new Response object.
-    // The content-type header is set to plain/text to match the response type.
-    return new Response(`Fetched Data (as text):\n\n${textData}`, {
+    // Return the fetched data in a new Response
+    return new Response(`Fetched external data (your IP address): ${textData}`, {
       status: 200,
-      headers: {
-        'Content-Type': 'text/plain',
-      },
+      headers: { 'Content-Type': 'text/plain' },
     });
-
   } catch (error) {
-    console.error('Error fetching external data:', error);
-    // Return an error response if something goes wrong
-    return new Response('Error fetching data: ' + error.message, {
+    console.error('Fetch error:', error);
+    return new Response(`Error fetching data: ${error.message}`, {
       status: 500,
     });
   }
 }
+
 async function fetchWithDelay() {         
   //  for (const url of urls) {
     try {
