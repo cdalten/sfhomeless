@@ -1,4 +1,4 @@
-/*const urls =  [
+const urls =  [
     'https://sfha.org/housing-programs/waitlist',
     'https://www.oakha.org/housing/qualifyandapply/waitlists/',
     'https://bha.berkeleyca.gov/bha-programs/section-8-waitlist'                   ]
@@ -30,21 +30,24 @@ function fetchPeriodically() {
 function getStatus(data, url) {
   let city = data.toLowerCase().includes("open");
 
-  if (city) {
+
+  /*if (city) {
    console.log(url + " list is closed");
   } else {
    console.log(url + "  list is open");
   }
+    */
+    document.write(data);
 }
 
 function pollSite() {
   fetchPeriodically();
 }
-*/
+
 function main() {
- // pollSite();
-console.log("test\n");
-document.write("<h1>This text was written by document.write()</h1>");
+ pollSite();
+//console.log("test\n");
+//document.write("<h1>This text was written by document.write()</h1>");
 }
 
 main();
