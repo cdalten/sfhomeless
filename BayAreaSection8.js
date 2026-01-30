@@ -21,10 +21,10 @@ async function fetchWithDelay() {
     try {
         const baseUrl = getBaseUrl();
    const absoluteUrl = `${baseUrl}/index`; //
-        document.write(absoluteUrl);
+        document.write("absolute url " + absoluteUrl);
       const response = await fetch(absoluteUrl);
-      const data = await response.text(); // or .json() [2]
-      getStatus(data, url);
+      //const data = await response.text(); // or .json() [2]
+     // getStatus(data, url);
       await wait(1000); // 1-second timer between sites [1]
     } catch (error) {
       console.error(`Error: ${error}`);
