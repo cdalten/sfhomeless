@@ -83,4 +83,4 @@ function main() {
 //document.write("<h1>This text was written by document.write()</h1>\n");
 }
 
-main();
+//main();
