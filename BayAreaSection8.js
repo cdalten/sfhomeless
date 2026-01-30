@@ -1,4 +1,4 @@
-const urls =  [
+⁸const urls =  [
     'https://sfha.org/housing-programs/waitlist',
     'https://www.oakha.org/housing/qualifyandapply/waitlists/',
     'https://bha.berkeleyca.gov/bha-programs/section-8-waitlist'                   ]
@@ -17,7 +17,7 @@ function getBaseUrl() {
 }
 
 async function fetchWithDelay() {         
-    for (const url of urls) {
+  //  for (const url of urls) {
     try {
         const baseUrl = getBaseUrl();
    const absoluteUrl = `${baseUrl}/index`; //
@@ -29,7 +29,7 @@ async function fetchWithDelay() {
     } catch (error) {
       console.error(`Error: ${error}`);
     }
-  }
+//  }
   console.log("\n\n");
 }
 
