@@ -6,16 +6,24 @@
 let combinedData = "";                  
 // Helper to delay requests
 //const wait = (ms) => new Promise(resolve => setTimeout(resolve, ms));
-function getBaseUrl() {
-  // In development, process.env.NODE_ENV is 'development'
-  if (process.env.NODE_ENV === 'development') {
-    return process.env.VERCEL_URL || 'http://localhost:3000';
+export default async function handler(req, res) {
+  try {
+    // Perform server-side fetch to external URL
+    const externalResponse = await fetch(urls[1]);
+    
+    // Check if response is okay
+    if (!externalResponse.ok) {
+      throw new Error(`Error: ${externalResponse.status}`);
+    }
+    
+    const data = await externalResponse.json();
+    
+    // Send data back to client
+    res.status(200).json(data);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
   }
-  // In production on Vercel, use the VERCEL_URL environment variable
-  // Add the protocol manually as it's often missing
-  return `https://${process.env.VERCEL_URL}`;
 }
-
 async function fetchWithDelay() {         
   //  for (const url of urls) {
     try {
