@@ -7,21 +7,34 @@ let combinedData = "";
 // Helper to delay requests
 //const wait = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 export default async function handler(req, res) {
+    const externalUrl = urls[1];
   try {
-    // Perform server-side fetch to external URL
-    const externalResponse = await fetch(urls[1]);
-    
-    // Check if response is okay
-    if (!externalResponse.ok) {
-      throw new Error(`Error: ${externalResponse.status}`);
+    // Perform the server-side fetch request
+    const response = await fetch(externalUrl);
+
+    // Check if the request was successful
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
     }
-    
-    const data = await externalResponse.json();
-    
-    // Send data back to client
-    res.status(200).json(data);
+
+    // Use the .text() method to parse the response body as plain text
+    const textData = await response.text();
+
+    // Return the text data in a new Response object.
+    // The content-type header is set to plain/text to match the response type.
+    return new Response(`Fetched Data (as text):\n\n${textData}`, {
+      status: 200,
+      headers: {
+        'Content-Type': 'text/plain',
+      },
+    });
+
   } catch (error) {
-    res.status(500).json({ error: error.message });
+    console.error('Error fetching external data:', error);
+    // Return an error response if something goes wrong
+    return new Response('Error fetching data: ' + error.message, {
+      status: 500,
+    });
   }
 }
 async function fetchWithDelay() {         
@@ -65,9 +78,9 @@ function pollSite() {
 }
 
 function main() {
- pollSite();
+// pollSite();
 //console.log("test\n");
-document.write("<h1>This text was written by document.write()</h1>\n");
+//document.write("<h1>This text was written by document.write()</h1>\n");
 }
 
 main();
