@@ -33,7 +33,7 @@ export default async function (request) {
   }
 }
 
-async function fetchWithDelay() {         
+/*async function fetchWithDelay() {         
   //  for (const url of urls) {
     try {
         const baseUrl = getBaseUrl();
@@ -60,15 +60,16 @@ function getStatus(data, url) {
   let city = data.toLowerCase().includes("open");
 
 
-  /*if (city) {
+  if (city) {
    console.log(url + " list is closed");
   } else {
    console.log(url + "  list is open");
   }
-    */
+    
     //document.getElementById('content-container').innerHTML = data;
 }
 
+  
 function pollSite() {
   fetchPeriodically();
 }
@@ -80,3 +81,5 @@ function main() {
 }
 
 //main();
+*/
+
