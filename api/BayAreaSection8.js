@@ -4,7 +4,7 @@
     'https://bha.berkeleyca.gov/bha-programs/section-8-waitlist'];
     */
                                         
-let combinedData = "";     
+//let combinedData = "";     
 export const runtime = 'edge';
 // Helper to delay requests
 //const wait = (ms) => new Promise(resolve => setTimeout(resolve, ms));
