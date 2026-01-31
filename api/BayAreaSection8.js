@@ -1,4 +1,4 @@
-⁸const urls =  [
+const urls =  [
     'https://sfha.org/housing-programs/waitlist',
     'https://www.oakha.org/housing/qualifyandapply/waitlists/',
     'https://bha.berkeleyca.gov/bha-programs/section-8-waitlist'];
