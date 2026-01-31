@@ -5,7 +5,7 @@
     */
                                         
 //let combinedData = "";     
-export const runtime = 'edge';
+//export const runtime = 'edge';
 // Helper to delay requests
 //const wait = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 
