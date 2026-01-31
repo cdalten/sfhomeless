@@ -1,7 +1,8 @@
-const urls =  [
+/*const urls =  [
     'https://sfha.org/housing-programs/waitlist',
     'https://www.oakha.org/housing/qualifyandapply/waitlists/',
     'https://bha.berkeleyca.gov/bha-programs/section-8-waitlist'];
+    */
                                         
 let combinedData = "";     
 export const runtime = 'edge';
@@ -10,8 +11,7 @@ export const runtime = 'edge';
 
 export default async function (request) {
   // The absolute remote external URL to fetch
-  const externalUrl = urls[1];
-
+  const externalUrl = 'https://sfha.org/housing-programs/waitlist';
   try {
     // Perform the fetch request server-side
     const response = await fetch(externalUrl, {
