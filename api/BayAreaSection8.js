@@ -39,7 +39,7 @@ export default async function (request) {
   }
 }
 
-async function fetchWithDelay() {         
+/*async function fetchWithDelay() {         
   //  for (const url of urls) {
     try {
         const baseUrl = getBaseUrl();
@@ -55,34 +55,17 @@ async function fetchWithDelay() {
 //  }
   console.log("\n\n");
 }
-
-
-function fetchPeriodically() {
-  //console.log("Fetching new data...");
-  fetchWithDelay(urls); // Reusing the function from above
-}
-
 function getStatus(data, url) {
   let city = data.toLowerCase().includes("open");
 
 
-  /*if (city) {
+  if (city) {
    console.log(url + " list is closed");
   } else {
    console.log(url + "  list is open");
   }
-    */
+    
     //document.getElementById('content-container').innerHTML = data;
 }
 
-function pollSite() {
-  fetchPeriodically();
-}
-
-function main() {
-// pollSite();
-//console.log("test\n");
-//document.write("<h1>This text was written by document.write()</h1>\n");
-}
-
-//main();
+*/
