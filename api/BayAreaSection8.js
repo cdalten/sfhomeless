@@ -11,7 +11,7 @@
 
 export default async function (request) {
   // The absolute remote external URL to fetch
-  const externalUrl = 'https://sfha.org/housing-programs/waitlist';
+  const externalUrl = 'https://api.github.com/';
   try {
     // Perform the fetch request server-side
     const response = await fetch(externalUrl, {
