@@ -18,7 +18,7 @@
 
             try {
                 // Client-side fetch to your Vercel serverless function (using relative path)
-                const response = await fetch('/api/BayAreaSection8');
+                const response = await fetch('/api/fetch-text');
 
                 if (!response.ok) {
                     throw new Error('Network response from Vercel function was not ok');
