@@ -1,3 +1,5 @@
+import nodefetch from 'node-fetch'
+
 /*const urls =  [
     'https://sfha.org/housing-programs/waitlist',
     'https://www.oakha.org/housing/qualifyandapply/waitlists/',
@@ -14,7 +16,7 @@ export default async function (request) {
   const externalUrl = 'https://api.github.com/';
   try {
     // Perform the fetch request server-side
-    const response = await fetch(externalUrl, {
+    const response = await nodefetch(externalUrl, {
       cache: 'no-store', // Prevents caching of the response if dynamic data is needed
     });
 
