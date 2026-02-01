@@ -1,4 +1,4 @@
-import nodefetch from 'node-fetch'
+//import nodefetch from 'node-fetch'
 
 export default async function (request) {
   // The absolute remote external URL to fetch
