@@ -1,10 +1,11 @@
+import nodefetch from 'node-fetch'
 
 export default async function (request) {
   // The absolute remote external URL to fetch
   const externalUrl = 'https://api.github.com/';
   try {
     // Perform the fetch request server-side
-    const response = await fetch(externalUrl, {
+    const response = await nodefetch(externalUrl, {
       cache: 'no-store', // Prevents caching of the response if dynamic data is needed
     });
 
